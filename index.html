@@ -154,6 +154,80 @@ NSLog(@&ldquo;the per is %f%%&rdquo;,(float)(k-j)*100/k);</p>
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2014/03/11/kkk/">Objc消息调用性能测试</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-11T20:03:37+08:00" pubdate data-updated="true">Mar 11<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>测试了一下objc的消息调用性能，测试环境是2.3Gi7 16GDDR3</p>
+
+<p>代码如下:</p>
+
+<div class="highlight"><pre><code class="objc"> <span class="n">clock_t</span> <span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="p">;</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">[</span><span class="n">ag</span> <span class="n">testUid</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
+    <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">k</span> <span class="o">=</span> <span class="p">(</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">);</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;first spend: %lu&quot;</span><span class="p">,</span><span class="n">k</span><span class="p">);</span>
+
+    <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">simp</span><span class="p">)(</span><span class="kt">id</span><span class="p">,</span><span class="kt">SEL</span><span class="p">);</span>
+
+    <span class="n">simp</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="kt">id</span><span class="p">,</span><span class="kt">SEL</span><span class="p">))[</span><span class="n">ag</span> <span class="nl">methodForSelector:</span><span class="k">@selector</span><span class="p">(</span><span class="n">testUid</span><span class="p">)];</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">simp</span><span class="p">(</span><span class="n">ag</span><span class="p">,</span> <span class="k">@selector</span><span class="p">(</span><span class="n">testUid</span><span class="p">));</span>
+    <span class="p">}</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
+
+
+    <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">j</span> <span class="o">=</span> <span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">);</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;second spend: %lu&quot;</span><span class="p">,</span><span class="n">j</span><span class="p">);</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;the per is %f%%&quot;</span><span class="p">,(</span><span class="kt">float</span><span class="p">)(</span><span class="n">k</span><span class="o">-</span><span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="o">/</span><span class="n">k</span><span class="p">);</span>
+</code></pre></div>
+
+
+<p>测试结果:</p>
+
+<p>2014-03-11 20:06:53.561 HelloWorld[9334:303] Hello, World!
+2014-03-11 20:06:53.566 HelloWorld[9334:303] first spend: 3537
+2014-03-11 20:06:53.569 HelloWorld[9334:303] second spend: 2081
+2014-03-11 20:06:53.569 HelloWorld[9334:303] the per is 41.164829%</p>
+
+<p>100万次的空消息调用，直接的函数调用比通过消息方式节约了大约33-42%
+如果有密集型的循环调用，这里是可以优化一部分性能，但带来的负面是代码不易读。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2014/03/11/ce-shi/">Objc消息调用性能测试</a></h1>
     
     
@@ -241,6 +315,10 @@ NSLog(@"the per is %f%%",(float)(k-j)*100/k);
     
       <li class="post">
         <a href="/blog/2014/03/11/xiao-xi-diao-yong-ce-shi/">Objc消息调用性能测试</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/11/kkk/">Objc消息调用性能测试</a>
       </li>
     
       <li class="post">

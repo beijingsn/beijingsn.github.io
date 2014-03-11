@@ -9,9 +9,7 @@
   <meta name="author" content="Suning">
 
   
-  <meta name="description" content="测试了一下objc的消息调用性能，测试环境是2.3Gi7 16GDDR3 代码如下: &hellip;&hellip; clock_t start,end;
-start = clock();
-for (int i = 0; i &lt; 1000000; i++) { [ag testUid &hellip;">
+  <meta name="description" content="测试了一下objc的消息调用性能，测试环境是2.3Gi7 16GDDR3 代码如下: clock_t start,end; start = clock(); for (int i = 0; i &lt; 1000000; i++) { [ag testUid]; } end = clock(); &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +18,7 @@ for (int i = 0; i &lt; 1000000; i++) { [ag testUid &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://beijingsn.github.io/blog/2014/03/11/xiao-xi-diao-yong-ce-shi">
+  <link rel="canonical" href="http://beijingsn.github.io/blog/2014/03/11/kkk">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="CallMe枪哥" type="application/atom+xml">
@@ -97,38 +95,31 @@ for (int i = 0; i &lt; 1000000; i++) { [ag testUid &hellip;">
 
 <p>代码如下:</p>
 
-<p>&hellip;&hellip;</p>
+<div class="highlight"><pre><code class="objc"> <span class="n">clock_t</span> <span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="p">;</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">[</span><span class="n">ag</span> <span class="n">testUid</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
+    <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">k</span> <span class="o">=</span> <span class="p">(</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">);</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;first spend: %lu&quot;</span><span class="p">,</span><span class="n">k</span><span class="p">);</span>
 
-<p>clock_t start,end;
-start = clock();
-for (int i = 0; i &lt; 1000000; i++) {</p>
+    <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">simp</span><span class="p">)(</span><span class="kt">id</span><span class="p">,</span><span class="kt">SEL</span><span class="p">);</span>
 
-<pre><code>[ag testUid];
-</code></pre>
+    <span class="n">simp</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="kt">id</span><span class="p">,</span><span class="kt">SEL</span><span class="p">))[</span><span class="n">ag</span> <span class="nl">methodForSelector:</span><span class="k">@selector</span><span class="p">(</span><span class="n">testUid</span><span class="p">)];</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
 
-<p>}
-end = clock();
-unsigned long k = (end-start);
-NSLog(@&ldquo;first spend: %lu&rdquo;,k);</p>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">simp</span><span class="p">(</span><span class="n">ag</span><span class="p">,</span> <span class="k">@selector</span><span class="p">(</span><span class="n">testUid</span><span class="p">));</span>
+    <span class="p">}</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
 
-<p>void (*simp)(id,SEL);</p>
 
-<p>simp = (void(*)(id,SEL))[ag methodForSelector:@selector(testUid)];
-start = clock();</p>
+    <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">j</span> <span class="o">=</span> <span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">);</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;second spend: %lu&quot;</span><span class="p">,</span><span class="n">j</span><span class="p">);</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;the per is %f%%&quot;</span><span class="p">,(</span><span class="kt">float</span><span class="p">)(</span><span class="n">k</span><span class="o">-</span><span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="o">/</span><span class="n">k</span><span class="p">);</span>
+</code></pre></div>
 
-<p>for (int i = 0; i &lt; 1000000; i++) {</p>
-
-<pre><code>simp(ag, @selector(testUid));
-</code></pre>
-
-<p>}
-end = clock();</p>
-
-<p>unsigned long j = (end &ndash; start);
-NSLog(@&ldquo;second spend: %lu&rdquo;,j);
-NSLog(@&ldquo;the per is %f%%&rdquo;,(float)(k-j)*100/k);</p>
-
-<p>&hellip;&hellip;</p>
 
 <p>测试结果:</p>
 
@@ -169,7 +160,7 @@ NSLog(@&ldquo;the per is %f%%&rdquo;,(float)(k-j)*100/k);</p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://beijingsn.github.io/blog/2014/03/11/xiao-xi-diao-yong-ce-shi/" data-via="" data-counturl="http://beijingsn.github.io/blog/2014/03/11/xiao-xi-diao-yong-ce-shi/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://beijingsn.github.io/blog/2014/03/11/kkk/" data-via="" data-counturl="http://beijingsn.github.io/blog/2014/03/11/kkk/" >Tweet</a>
   
   
   
@@ -178,8 +169,10 @@ NSLog(@&ldquo;the per is %f%%&rdquo;,(float)(k-j)*100/k);</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/03/11/kkk/" title="Previous Post: Objc消息调用性能测试">&laquo; Objc消息调用性能测试</a>
+        <a class="basic-alignment left" href="/blog/2014/03/11/ce-shi/" title="Previous Post: Objc消息调用性能测试">&laquo; Objc消息调用性能测试</a>
       
+      
+        <a class="basic-alignment right" href="/blog/2014/03/11/xiao-xi-diao-yong-ce-shi/" title="Next Post: Objc消息调用性能测试">Objc消息调用性能测试 &raquo;</a>
       
     </p>
   </footer>
