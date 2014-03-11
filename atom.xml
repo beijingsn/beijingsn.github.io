@@ -4,7 +4,7 @@
   <title><![CDATA[BeijingSN]]></title>
   <link href="http://beijingsn.github.io/atom.xml" rel="self"/>
   <link href="http://beijingsn.github.io/"/>
-  <updated>2014-03-11T15:18:13+08:00</updated>
+  <updated>2014-03-11T15:24:08+08:00</updated>
   <id>http://beijingsn.github.io/</id>
   <author>
     <name><![CDATA[BeijingSN]]></name>
@@ -14,11 +14,24 @@
 
   
   <entry>
-    <title type="html"><![CDATA[无后顾之忧的生活]]></title>
-    <link href="http://beijingsn.github.io/blog/2014/03/11/wu-hou-gu-zhi-you-de-sheng-huo/"/>
-    <updated>2014-03-11T15:18:01+08:00</updated>
-    <id>http://beijingsn.github.io/blog/2014/03/11/wu-hou-gu-zhi-you-de-sheng-huo</id>
-    <content type="html"><![CDATA[
+    <title type="html"><![CDATA[Test]]></title>
+    <link href="http://beijingsn.github.io/blog/2014/03/11/test/"/>
+    <updated>2014-03-11T15:22:34+08:00</updated>
+    <id>http://beijingsn.github.io/blog/2014/03/11/test</id>
+    <content type="html"><![CDATA[<p>hello my workd
+sadf
+asdfasdfasdf
+asdf</p>
+
+<p>asdf</p>
+
+<p>asdf
+asdf</p>
+
+<p>asd
+f
+asd
+fasdf</p>
 ]]></content>
   </entry>
   
