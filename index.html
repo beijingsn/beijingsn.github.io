@@ -9,7 +9,10 @@
   <meta name="author" content="Suning">
 
   
-  <meta name="description" content="测试了一下objc的消息调用性能，测试环境是2.3Gi7 16GDDR3 代码如下: Greeter * ag = [[Greeter alloc] init]; clock_t start,end; start = clock(); for (int i = 0; i &lt; 1000000 &hellip;">
+  <meta name="description" content="objc中不能在类声明中的声明static 变量, 会报:
+Error: Type name does not allow storage class to be specified
+这是objc不准许的。如果要做类变量，需要在m文件中声明static 变量, 位置在
+@ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +68,57 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/03/11/lei-bian-liang/">类变量</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-11T23:58:17+08:00" pubdate data-updated="true">Mar 11<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>objc中不能在类声明中的声明static 变量, 会报:
+Error: Type name does not allow storage class to be specified
+这是objc不准许的。如果要做类变量，需要在m文件中声明static 变量, 位置在
+@implementation里外都可以。</p>
+
+<p>ClassMem.m:</p>
+
+<div class="highlight"><pre><code class="objc"><span class="k">static</span> <span class="n">NSUInteger</span> <span class="n">mInt</span><span class="p">;</span>
+<span class="k">@implementation</span> <span class="nc">ClassMem</span>
+<span class="p">...</span>
+<span class="k">@end</span>
+</code></pre></div>
+
+
+<p>不在h文件中声明(@interface之外)的原因和c一样(objc也是c嘛), 任何包含此
+头文件的m文件都会创建一份static变量，同名且互相独立，作用域不相同。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -153,6 +207,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/03/11/lei-bian-liang/">类变量</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/03/11/xiao-xi-diao-yong-ce-shi/">Objc消息调用性能测试</a>

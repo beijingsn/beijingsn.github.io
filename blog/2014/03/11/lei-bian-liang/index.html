@@ -5,13 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - CallMe枪哥</title>
+  <title>类变量 - CallMe枪哥</title>
   <meta name="author" content="Suning">
 
   
-  <meta name="description" content=" Blog Archive 2014 类变量
-Mar 11 2014 Objc消息调用性能测试
-Mar 11 2014 Recent Posts 类变量 Objc消息调用性能测试 ">
+  <meta name="description" content="objc中不能在类声明中的声明static 变量, 会报:
+Error: Type name does not allow storage class to be specified
+这是objc不准许的。如果要做类变量，需要在m文件中声明static 变量, 位置在
+@ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +21,7 @@ Mar 11 2014 Recent Posts 类变量 Objc消息调用性能测试 ">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://beijingsn.github.io/blog/archives">
+  <link rel="canonical" href="http://beijingsn.github.io/blog/2014/03/11/lei-bian-liang">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="CallMe枪哥" type="application/atom+xml">
@@ -66,41 +67,93 @@ Mar 11 2014 Recent Posts 类变量 Objc消息调用性能测试 ">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">类变量</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-11T23:58:17+08:00" pubdate data-updated="true">Mar 11<span>th</span>, 2014</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><p>objc中不能在类声明中的声明static 变量, 会报:
+Error: Type name does not allow storage class to be specified
+这是objc不准许的。如果要做类变量，需要在m文件中声明static 变量, 位置在
+@implementation里外都可以。</p>
 
-  
-  <h2>2014</h2>
+<p>ClassMem.m:</p>
 
-<article>
-  
-<h1><a href="/blog/2014/03/11/lei-bian-liang/">类变量</a></h1>
-<time datetime="2014-03-11T23:58:17+08:00" pubdate><span class='month'>Mar</span> <span class='day'>11</span> <span class='year'>2014</span></time>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2014/03/11/xiao-xi-diao-yong-ce-shi/">Objc消息调用性能测试</a></h1>
-<time datetime="2014-03-11T20:03:37+08:00" pubdate><span class='month'>Mar</span> <span class='day'>11</span> <span class='year'>2014</span></time>
+<div class="highlight"><pre><code class="objc"><span class="k">static</span> <span class="n">NSUInteger</span> <span class="n">mInt</span><span class="p">;</span>
+<span class="k">@implementation</span> <span class="nc">ClassMem</span>
+<span class="p">...</span>
+<span class="k">@end</span>
+</code></pre></div>
 
 
-</article>
-
+<p>不在h文件中声明(@interface之外)的原因和c一样(objc也是c嘛), 任何包含此
+头文件的m文件都会创建一份static变量，同名且互相独立，作用域不相同。</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Suning</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-11T23:58:17+08:00" pubdate data-updated="true">Mar 11<span>th</span>, 2014</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://beijingsn.github.io/blog/2014/03/11/lei-bian-liang/" data-via="" data-counturl="http://beijingsn.github.io/blog/2014/03/11/lei-bian-liang/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/03/11/xiao-xi-diao-yong-ce-shi/" title="Previous Post: Objc消息调用性能测试">&laquo; Objc消息调用性能测试</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
 </div>
