@@ -9,7 +9,7 @@
   <meta name="author" content="Suning">
 
   
-  <meta name="description" content="测试了一下objc的消息调用性能，测试环境是2.3Gi7 16GDDR3 代码如下: clock_t start,end; start = clock(); for (int i = 0; i &lt; 1000000; i++) { [ag testUid]; } end = clock(); &hellip;">
+  <meta name="description" content="测试了一下objc的消息调用性能，测试环境是2.3Gi7 16GDDR3 代码如下: Greeter * ag = [[Greeter alloc] init]; clock_t start,end; start = clock(); for (int i = 0; i &lt; 1000000 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -95,7 +95,8 @@
 
 <p>代码如下:</p>
 
-<div class="highlight"><pre><code class="objc"> <span class="n">clock_t</span> <span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="p">;</span>
+<div class="highlight"><pre><code class="objc"> <span class="n">Greeter</span> <span class="o">*</span> <span class="n">ag</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Greeter</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+    <span class="n">clock_t</span> <span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="p">;</span>
     <span class="n">start</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
         <span class="p">[</span><span class="n">ag</span> <span class="n">testUid</span><span class="p">];</span>
@@ -123,8 +124,7 @@
 
 <p>测试结果:</p>
 
-<div class="highlight"><pre><code class="robotframework"><span class="c">2014-03-11 20:06:53.561 HelloWorld[9334:303] Hello, World!</span><span class="p"></span>
-<span class="c">2014-03-11 20:06:53.566 HelloWorld[9334:303] first spend: 3537</span><span class="p"></span>
+<div class="highlight"><pre><code class="robotframework"><span class="c">2014-03-11 20:06:53.566 HelloWorld[9334:303] first spend: 3537</span><span class="p"></span>
 <span class="c">2014-03-11 20:06:53.569 HelloWorld[9334:303] second spend: 2081</span><span class="p"></span>
 <span class="c">2014-03-11 20:06:53.569 HelloWorld[9334:303] the per is 41.164829%</span><span class="p"></span>
 </code></pre></div>
