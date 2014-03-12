@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: objectc | CallMe枪哥]]></title>
+  <link href="http://beijingsn.github.io/blog/categories/objectc/atom.xml" rel="self"/>
+  <link href="http://beijingsn.github.io/"/>
+  <updated>2014-03-12T13:42:40+08:00</updated>
+  <id>http://beijingsn.github.io/</id>
+  <author>
+    <name><![CDATA[Suning]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[类变量]]></title>
+    <link href="http://beijingsn.github.io/blog/2014/03/11/lei-bian-liang/"/>
+    <updated>2014-03-11T23:58:17+08:00</updated>
+    <id>http://beijingsn.github.io/blog/2014/03/11/lei-bian-liang</id>
+    <content type="html"><![CDATA[<p>objc中不能在类声明中的声明static 变量, 会报:
+Error: Type name does not allow storage class to be specified
+这是objc不准许的。如果要做类变量，需要在m文件中声明static 变量, 位置在
+@implementation里外都可以。</p>
+
+<p>ClassMem.m:
+<div class="highlight"><pre><code class="objc"><span class="k">static</span> <span class="n">NSUInteger</span> <span class="n">mInt</span><span class="p">;</span>
+<span class="k">@implementation</span> <span class="nc">ClassMem</span>
+<span class="o">&amp;</span><span class="n">hellip</span><span class="p">;</span>
+<span class="k">@end</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+</code></pre></div></p>
+
+<p>不在h文件中声明(@interface之外)的原因和c一样(objc也是c嘛), 任何包含此
+头文件的m文件都会创建一份static变量，同名且互相独立，作用域不相同。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Objc消息调用性能测试]]></title>
+    <link href="http://beijingsn.github.io/blog/2014/03/11/xiao-xi-diao-yong-ce-shi/"/>
+    <updated>2014-03-11T20:03:37+08:00</updated>
+    <id>http://beijingsn.github.io/blog/2014/03/11/xiao-xi-diao-yong-ce-shi</id>
+    <content type="html"><![CDATA[<p>测试了一下objc的消息调用性能，测试环境是2.3Gi7 16GDDR3</p>
+
+<p>代码如下:</p>
+
+<p><div class="highlight"><pre><code class="objc"><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">Greeter</span> <span class="o">*</span> <span class="n">ag</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Greeter</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+<span class="n">clock_t</span> <span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="p">;</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="mi">1000000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">[</span><span class="n">ag</span> <span class="n">testUid</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
+<span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">k</span> <span class="o">=</span> <span class="p">(</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">);</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;first spend: %lu&quot;</span><span class="p">,</span><span class="n">k</span><span class="p">);</span>
+
+<span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">simp</span><span class="p">)(</span><span class="kt">id</span><span class="p">,</span><span class="kt">SEL</span><span class="p">);</span>
+
+<span class="n">simp</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="kt">id</span><span class="p">,</span><span class="kt">SEL</span><span class="p">))[</span><span class="n">ag</span> <span class="nl">methodForSelector:</span><span class="k">@selector</span><span class="p">(</span><span class="n">testUid</span><span class="p">)];</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="mi">1000000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">simp</span><span class="p">(</span><span class="n">ag</span><span class="p">,</span> <span class="k">@selector</span><span class="p">(</span><span class="n">testUid</span><span class="p">));</span>
+<span class="p">}</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
+
+
+<span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">j</span> <span class="o">=</span> <span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">);</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;second spend: %lu&quot;</span><span class="p">,</span><span class="n">j</span><span class="p">);</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;the per is %f%%&quot;</span><span class="p">,(</span><span class="kt">float</span><span class="p">)(</span><span class="n">k</span><span class="o">-</span><span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="o">/</span><span class="n">k</span><span class="p">);</span>
+<span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+</code></pre></div></p>
+
+<p>测试结果:</p>
+
+<p><div class="highlight"><pre><code class="robotframework"><span class="c">2014-03-11 20:06:53.566 HelloWorld[9334:303] first spend: 3537</span><span class="p"></span>
+<span class="c">2014-03-11 20:06:53.569 HelloWorld[9334:303] second spend: 2081</span><span class="p"></span>
+<span class="c">2014-03-11 20:06:53.569 HelloWorld[9334:303] the per is 41.164829%</span><span class="p"></span>
+</code></pre></div></p>
+
+<p>100万次的空消息调用，直接的函数调用比通过消息方式节约了大约33-42%
+如果有密集型的循环调用，这里是可以优化一部分性能，但带来的负面是代码不易读。</p>
+]]></content>
+  </entry>
+  
+</feed>
