@@ -1,24 +1,99 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[CallMe枪哥]]></title>
-  <link href="http://beijingsn.github.io/atom.xml" rel="self"/>
-  <link href="http://beijingsn.github.io/"/>
-  <updated>2014-03-18T15:03:40+08:00</updated>
-  <id>http://beijingsn.github.io/</id>
-  <author>
-    <name><![CDATA[Suning]]></name>
-    
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Daemon进程 - CallMe枪哥</title>
+  <meta name="author" content="Suning">
 
   
-  <entry>
-    <title type="html"><![CDATA[Daemon进程]]></title>
-    <link href="http://beijingsn.github.io/blog/2014/03/18/daemonjin-cheng/"/>
-    <updated>2014-03-18T15:02:58+08:00</updated>
-    <id>http://beijingsn.github.io/blog/2014/03/18/daemonjin-cheng</id>
-    <content type="html"><![CDATA[<p> (本文转载: <a href="http://blog.chinaunix.net/uid-27105712-id-3356916.html">http://blog.chinaunix.net/uid-27105712-id-3356916.html</a>)</p>
+  <meta name="description" content="(本文转载: http://blog.chinaunix.net/uid-27105712-id-3356916.html) daemon进程是后台守护进程，有时候也叫精灵进程(agent).linux 下server都是daemon进程。相信大部分开发人员都知道如何去写一个daemon进程。 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://beijingsn.github.io/blog/2014/03/18/daemonjin-cheng/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="CallMe枪哥" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:beijingsn.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+    <li><a href="/">
+        <span class="blue_light">
+            CallMe枪哥
+        </span>
+       
+           <span class="blue_dark">
+             A blogging framework for hackers.
+           </span>
+       
+    </a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About me</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Daemon进程</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-18T15:02:58+08:00" pubdate data-updated="true">Mar 18<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p> (本文转载: <a href="http://blog.chinaunix.net/uid-27105712-id-3356916.html">http://blog.chinaunix.net/uid-27105712-id-3356916.html</a>)</p>
 
 <p>  daemon进程是后台守护进程，有时候也叫精灵进程(agent).linux 下server都是daemon进程。相信大部分开发人员都知道如何去写一个daemon进程。但是另一方面，大部分人不知道为什么要这么做，不少人是从某个地方copy一个函数，拿来主义。但是具体为什么这么实现，却不是很透彻。
   见过一些面试官或被面试人。很多人解释daemon进程存在的理由是因为僵死进程。或者输入输出。其实和这些东西一毛钱关系都没有。daemon函数存在的原因是因为控制终端由于某些原因（如断开终端链接）会发送一些信号的原因。而接收进城处理这些信号缺省动作会让进程退出。这些信号会由于终端上敲一些特殊按键而产生。</p>
@@ -92,80 +167,126 @@
 
 
 <p>上面这些信号，应该有些程序缺省处理（SIG_DFL）本身动作就是忽略（SIG_IGN），不是退出进程。不过按照上面写也不会造成什么问题。</p>
-]]></content>
-  </entry>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
-  <entry>
-    <title type="html"><![CDATA[类变量]]></title>
-    <link href="http://beijingsn.github.io/blog/2014/03/11/lei-bian-liang/"/>
-    <updated>2014-03-11T23:58:17+08:00</updated>
-    <id>http://beijingsn.github.io/blog/2014/03/11/lei-bian-liang</id>
-    <content type="html"><![CDATA[<p>objc中不能在类声明中的声明static 变量, 会报:
-Error: Type name does not allow storage class to be specified
-这是objc不准许的。如果要做类变量，需要在m文件中声明static 变量, 位置在
-@implementation里外都可以。</p>
 
-<p>ClassMem.m:</p>
+<span class="byline author vcard">Posted by <span class="fn">Suning</span></span>
 
-<div class="highlight"><pre><code class="objc"><span class="k">static</span> <span class="n">NSUInteger</span> <span class="n">mInt</span><span class="p">;</span>
-<span class="k">@implementation</span> <span class="nc">ClassMem</span>
-<span class="p">...</span>
-<span class="k">@end</span>
-</code></pre></div>
+      
 
 
-<p>不在h文件中声明(@interface之外)的原因和c一样(objc也是c嘛), 任何包含此
-头文件的m文件都会创建一份static变量，同名且互相独立，作用域不相同。</p>
-]]></content>
-  </entry>
+
+
+
+
+
+
   
-  <entry>
-    <title type="html"><![CDATA[Objc消息调用性能测试]]></title>
-    <link href="http://beijingsn.github.io/blog/2014/03/11/xiao-xi-diao-yong-ce-shi/"/>
-    <updated>2014-03-11T20:03:37+08:00</updated>
-    <id>http://beijingsn.github.io/blog/2014/03/11/xiao-xi-diao-yong-ce-shi</id>
-    <content type="html"><![CDATA[<p>测试了一下objc的消息调用性能，测试环境是2.3Gi7 16GDDR3</p>
-
-<p>代码如下:</p>
-
-<div class="highlight"><pre><code class="objc"> <span class="n">Greeter</span> <span class="o">*</span> <span class="n">ag</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Greeter</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
-    <span class="n">clock_t</span> <span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="p">;</span>
-    <span class="n">start</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="p">[</span><span class="n">ag</span> <span class="n">testUid</span><span class="p">];</span>
-    <span class="p">}</span>
-    <span class="n">end</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
-    <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">k</span> <span class="o">=</span> <span class="p">(</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">);</span>
-    <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;first spend: %lu&quot;</span><span class="p">,</span><span class="n">k</span><span class="p">);</span>
-
-    <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">simp</span><span class="p">)(</span><span class="kt">id</span><span class="p">,</span><span class="kt">SEL</span><span class="p">);</span>
-
-    <span class="n">simp</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="kt">id</span><span class="p">,</span><span class="kt">SEL</span><span class="p">))[</span><span class="n">ag</span> <span class="nl">methodForSelector:</span><span class="k">@selector</span><span class="p">(</span><span class="n">testUid</span><span class="p">)];</span>
-    <span class="n">start</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
-
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">simp</span><span class="p">(</span><span class="n">ag</span><span class="p">,</span> <span class="k">@selector</span><span class="p">(</span><span class="n">testUid</span><span class="p">));</span>
-    <span class="p">}</span>
-    <span class="n">end</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
 
 
-    <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">j</span> <span class="o">=</span> <span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">);</span>
-    <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;second spend: %lu&quot;</span><span class="p">,</span><span class="n">j</span><span class="p">);</span>
-    <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;the per is %f%%&quot;</span><span class="p">,(</span><span class="kt">float</span><span class="p">)(</span><span class="n">k</span><span class="o">-</span><span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="o">/</span><span class="n">k</span><span class="p">);</span>
-</code></pre></div>
+<time datetime="2014-03-18T15:02:58+08:00" pubdate data-updated="true">Mar 18<span>th</span>, 2014</time>
+      
 
-
-<p>测试结果:</p>
-
-<div class="highlight"><pre><code class="robotframework"><span class="c">2014-03-11 20:06:53.566 HelloWorld[9334:303] first spend: 3537</span><span class="p"></span>
-<span class="c">2014-03-11 20:06:53.569 HelloWorld[9334:303] second spend: 2081</span><span class="p"></span>
-<span class="c">2014-03-11 20:06:53.569 HelloWorld[9334:303] the per is 41.164829%</span><span class="p"></span>
-</code></pre></div>
-
-
-<p>100万次的空消息调用，直接的函数调用比通过消息方式节约了大约33-42%
-如果有密集型的循环调用，这里是可以优化一部分性能，但带来的负面是代码不易读。</p>
-]]></content>
-  </entry>
+<span class="categories">
   
-</feed>
+    <a class='category' href='/blog/categories/linux/'>Linux</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://beijingsn.github.io/blog/2014/03/18/daemonjin-cheng/" data-via="" data-counturl="http://beijingsn.github.io/blog/2014/03/18/daemonjin-cheng/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/03/11/lei-bian-liang/" title="Previous Post: 类变量">&laquo; 类变量</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Categories</h1>
+  <ul id="categories">
+	<li class='category'><a href='/blog/categories/linux/'>Linux (1)</a></li>
+<li class='category'><a href='/blog/categories/objectc/'>objectc (2)</a></li>
+
+  </ul>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/03/18/daemonjin-cheng/">Daemon进程</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/11/lei-bian-liang/">类变量</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/11/xiao-xi-diao-yong-ce-shi/">Objc消息调用性能测试</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Suning -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
