@@ -4,7 +4,7 @@
   <title><![CDATA[CallMe枪哥]]></title>
   <link href="http://beijingsn.github.io/atom.xml" rel="self"/>
   <link href="http://beijingsn.github.io/"/>
-  <updated>2014-03-18T15:03:40+08:00</updated>
+  <updated>2014-03-20T23:51:19+08:00</updated>
   <id>http://beijingsn.github.io/</id>
   <author>
     <name><![CDATA[Suning]]></name>
@@ -12,6 +12,38 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[convertstring]]></title>
+    <link href="http://beijingsn.github.io/blog/2014/03/20/convertstring/"/>
+    <updated>2014-03-20T23:48:30+08:00</updated>
+    <id>http://beijingsn.github.io/blog/2014/03/20/convertstring</id>
+    <content type="html"><![CDATA[
+
+<div class="highlight"><pre><code class="c">    <span class="kt">char</span> <span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="s">&quot;abcdefghi&quot;</span><span class="p">;</span>
+        
+    <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">len</span> <span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)</span><span class="n">strlen</span><span class="p">((</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">p</span><span class="p">);</span>
+    <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">myl</span> <span class="o">=</span> <span class="n">len</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+                    
+    <span class="kt">char</span> <span class="o">*</span> <span class="n">k</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">len</span><span class="p">);</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">strdup</span><span class="p">((</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">p</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">myl</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="n">memcpy</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="n">i</span><span class="p">,(</span><span class="n">p</span><span class="o">+</span><span class="n">len</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="mi">1</span><span class="p">);</span>
+        <span class="n">memcpy</span><span class="p">((</span><span class="n">k</span><span class="o">+</span><span class="n">len</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="o">&amp;</span><span class="n">c</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+                                                                        
+    <span class="n">p</span> <span class="o">=</span> <span class="n">k</span><span class="p">;</span>
+    <span class="n">free</span><span class="p">(</span><span class="n">k</span><span class="p">);</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">p</span><span class="p">);</span>
+</code></pre></div>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Daemon进程]]></title>
@@ -68,11 +100,15 @@
 
 <p>1 、第一次fork的作用是让shell 认为本条命令 已经终止，不用挂在终端输入上。还有一个作用是为后面setsid服务。setsid的调用者不能是进程组组长(group leader). 此时父进程是进程组组长。</p>
 
-<p>2 、setsid() 是本函数最重要的一个调用。它完成了daemon函数想要做的大部分事情。调用完整个函数。子进程是会话组长(sid==pid)，也是进程组组长(pgid == pid)，并且脱离了原来控制终端。到了这一步，基本上不管控制终端如何怎么样。新的进程都不会收到那些信号。
-3  、经过前面2个步骤，基本想要做的都做了。第2次fork不是必须的。也看到很多开源服务没有fork第二次。fork第二次主要目的是。防止进程再次打开一个控制终端。因为打开一个控制终端的前台条件是该进程必须是会话组长。再fork一次，子进程ID != sid（sid是进程父进程的sid）。所以也无法打开新的控制终端。
-  daemon目的就是防止终端产生的一些信号让进程退出。上面函数并没有直接调用signal函数去处理它。而是间接通过fork和setsid函数使用更少代码优雅处理。而被有些人误以为是僵死进程的原因需要这样处理。
-  当然，也有很多程序不是像上面函数那样去实现。而是直接通过忽略信号方式处理。这样其实也不错，因为这些信号很少会有用到的价值。直接忽略基本上不存在误杀的情况。反正达到最终目的就可以。条条大路通罗马。
-  下面罗列一下控制终端会产生哪些信号。程序中只要处理好这些信号，同样能达到上面函数实现的目的。</p>
+<p>2 、setsid() 是本函数最重要的一个调用。它完成了daemon函数想要做的大部分事情。调用完整个函数。子进程是会话组长(sid==pid)，也是进程组组长(pgid == pid)，并且脱离了原来控制终端。到了这一步，基本上不管控制终端如何怎么样。新的进程都不会收到那些信号。</p>
+
+<p>3 、经过前面2个步骤，基本想要做的都做了。第2次fork不是必须的。也看到很多开源服务没有fork第二次。fork第二次主要目的是。防止进程再次打开一个控制终端。因为打开一个控制终端的前台条件是该进程必须是会话组长。再fork一次，子进程ID != sid（sid是进程父进程的sid）。所以也无法打开新的控制终端。</p>
+
+<p>  daemon目的就是防止终端产生的一些信号让进程退出。上面函数并没有直接调用signal函数去处理它。而是间接通过fork和setsid函数使用更少代码优雅处理。而被有些人误以为是僵死进程的原因需要这样处理。</p>
+
+<p>  当然，也有很多程序不是像上面函数那样去实现。而是直接通过忽略信号方式处理。这样其实也不错，因为这些信号很少会有用到的价值。直接忽略基本上不存在误杀的情况。反正达到最终目的就可以。条条大路通罗马。</p>
+
+<p>  下面罗列一下控制终端会产生哪些信号。程序中只要处理好这些信号，同样能达到上面函数实现的目的。</p>
 
 <div class="highlight"><pre><code class="c"><span class="c1">//后台进程读取/写入终端输入产生下面两个信号，或者控制终端不存在情况读取和写入会产生</span>
 <span class="n">signal</span><span class="p">(</span><span class="n">SIGTTOU</span><span class="p">,</span> <span class="n">SIG_IGN</span><span class="p">);</span>

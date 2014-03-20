@@ -5,14 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>类变量 - CallMe枪哥</title>
+  <title>Category: interview - CallMe枪哥</title>
   <meta name="author" content="Suning">
 
   
-  <meta name="description" content="objc中不能在类声明中的声明static 变量, 会报:
-Error: Type name does not allow storage class to be specified
-这是objc不准许的。如果要做类变量，需要在m文件中声明static 变量, 位置在
-@ &hellip;">
+  <meta name="description" content="Category: interview">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +18,7 @@ Error: Type name does not allow storage class to be specified
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://beijingsn.github.io/blog/2014/03/11/lei-bian-liang/">
+  <link rel="canonical" href="http://beijingsn.github.ioblog/categories/interview/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -69,101 +66,35 @@ Error: Type name does not allow storage class to be specified
   <div id="main">
     <div id="content">
       <div>
-<article class="hentry" role="article">
+<article role="article">
   
   <header>
-    
-      <h1 class="entry-title">类变量</h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-03-11T23:58:17+08:00" pubdate data-updated="true">Mar 11<span>th</span>, 2014</time>
-        
-      </p>
+    <h1 class="entry-title">Category: Interview</h1>
     
   </header>
+  
+  <div id="blog-archives" class="category">
 
 
-<div class="entry-content"><p>objc中不能在类声明中的声明static 变量, 会报:
-Error: Type name does not allow storage class to be specified
-这是objc不准许的。如果要做类变量，需要在m文件中声明static 变量, 位置在
-@implementation里外都可以。</p>
 
-<p>ClassMem.m:</p>
+  
+  <h2>2014</h2>
 
-<div class="highlight"><pre><code class="objc"><span class="k">static</span> <span class="n">NSUInteger</span> <span class="n">mInt</span><span class="p">;</span>
-<span class="k">@implementation</span> <span class="nc">ClassMem</span>
-<span class="p">...</span>
-<span class="k">@end</span>
-</code></pre></div>
+<article>
+  
+<h1><a href="/blog/2014/03/20/convertstring/">convertstring</a></h1>
+<time datetime="2014-03-20T23:48:30+08:00" pubdate><span class='month'>Mar</span> <span class='day'>20</span> <span class='year'>2014</span></time>
+
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/interview/'>interview</a></span>
+</footer>
 
 
-<p>不在h文件中声明(@interface之外)的原因和c一样(objc也是c嘛), 任何包含此
-头文件的m文件都会创建一份static变量，同名且互相独立，作用域不相同。</p>
+</article>
+
 </div>
 
-
-  <footer>
-    <p class="meta">
-      
   
-
-<span class="byline author vcard">Posted by <span class="fn">Suning</span></span>
-
-      
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-03-11T23:58:17+08:00" pubdate data-updated="true">Mar 11<span>th</span>, 2014</time>
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/objectc/'>objectc</a>
-  
-</span>
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://beijingsn.github.io/blog/2014/03/11/lei-bian-liang/" data-via="" data-counturl="http://beijingsn.github.io/blog/2014/03/11/lei-bian-liang/" >Tweet</a>
-  
-  
-  
-</div>
-
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2014/03/11/xiao-xi-diao-yong-ce-shi/" title="Previous Post: Objc消息调用性能测试">&laquo; Objc消息调用性能测试</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2014/03/18/daemonjin-cheng/" title="Next Post: Daemon进程">Daemon进程 &raquo;</a>
-      
-    </p>
-  </footer>
 </article>
 
 </div>
