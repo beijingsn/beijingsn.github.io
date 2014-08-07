@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: objectc | CallMe枪哥]]></title>
-  <link href="http://beijingsn.github.io/blog/categories/objectc/atom.xml" rel="self"/>
-  <link href="http://beijingsn.github.io/"/>
-  <updated>2014-08-07T17:26:17+08:00</updated>
-  <id>http://beijingsn.github.io/</id>
+  <link href="http://whatshit.me/blog/categories/objectc/atom.xml" rel="self"/>
+  <link href="http://whatshit.me/"/>
+  <updated>2014-08-07T17:48:56+08:00</updated>
+  <id>http://whatshit.me/</id>
   <author>
     <name><![CDATA[Suning]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[类变量]]></title>
-    <link href="http://beijingsn.github.io/blog/2014/03/11/lei-bian-liang/"/>
+    <link href="http://whatshit.me/blog/2014/03/11/lei-bian-liang/"/>
     <updated>2014-03-11T23:58:17+08:00</updated>
-    <id>http://beijingsn.github.io/blog/2014/03/11/lei-bian-liang</id>
+    <id>http://whatshit.me/blog/2014/03/11/lei-bian-liang</id>
     <content type="html"><![CDATA[<p>objc中不能在类声明中的声明static 变量, 会报:
 Error: Type name does not allow storage class to be specified
 这是objc不准许的。如果要做类变量，需要在m文件中声明static 变量, 位置在
@@ -39,9 +39,9 @@ Error: Type name does not allow storage class to be specified
   
   <entry>
     <title type="html"><![CDATA[Objc消息调用性能测试]]></title>
-    <link href="http://beijingsn.github.io/blog/2014/03/11/xiao-xi-diao-yong-ce-shi/"/>
+    <link href="http://whatshit.me/blog/2014/03/11/xiao-xi-diao-yong-ce-shi/"/>
     <updated>2014-03-11T20:03:37+08:00</updated>
-    <id>http://beijingsn.github.io/blog/2014/03/11/xiao-xi-diao-yong-ce-shi</id>
+    <id>http://whatshit.me/blog/2014/03/11/xiao-xi-diao-yong-ce-shi</id>
     <content type="html"><![CDATA[<p>测试了一下objc的消息调用性能，测试环境是2.3Gi7 16GDDR3</p>
 
 <p>代码如下:</p>

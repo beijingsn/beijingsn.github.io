@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://beijingsn.github.io/sitemap.xml 
+Sitemap: http://whatshit.me/sitemap.xml 

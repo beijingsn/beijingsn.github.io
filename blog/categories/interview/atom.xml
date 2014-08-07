@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: interview | CallMe枪哥]]></title>
-  <link href="http://beijingsn.github.io/blog/categories/interview/atom.xml" rel="self"/>
-  <link href="http://beijingsn.github.io/"/>
-  <updated>2014-08-07T17:26:17+08:00</updated>
-  <id>http://beijingsn.github.io/</id>
+  <link href="http://whatshit.me/blog/categories/interview/atom.xml" rel="self"/>
+  <link href="http://whatshit.me/"/>
+  <updated>2014-08-07T17:48:56+08:00</updated>
+  <id>http://whatshit.me/</id>
   <author>
     <name><![CDATA[Suning]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[convertstring]]></title>
-    <link href="http://beijingsn.github.io/blog/2014/03/20/convertstring/"/>
+    <link href="http://whatshit.me/blog/2014/03/20/convertstring/"/>
     <updated>2014-03-20T23:48:30+08:00</updated>
-    <id>http://beijingsn.github.io/blog/2014/03/20/convertstring</id>
+    <id>http://whatshit.me/blog/2014/03/20/convertstring</id>
     <content type="html"><![CDATA[<p><div class="highlight"><pre><code class="c"><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 
 <span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="kt">char</span> <span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="s">&quot;abcdefghi&quot;</span><span class="p">;</span>

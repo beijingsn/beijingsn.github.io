@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Linux | CallMe枪哥]]></title>
-  <link href="http://beijingsn.github.io/blog/categories/linux/atom.xml" rel="self"/>
-  <link href="http://beijingsn.github.io/"/>
-  <updated>2014-08-07T17:26:17+08:00</updated>
-  <id>http://beijingsn.github.io/</id>
+  <link href="http://whatshit.me/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://whatshit.me/"/>
+  <updated>2014-08-07T17:48:56+08:00</updated>
+  <id>http://whatshit.me/</id>
   <author>
     <name><![CDATA[Suning]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Daemon进程]]></title>
-    <link href="http://beijingsn.github.io/blog/2014/03/18/daemonjin-cheng/"/>
+    <link href="http://whatshit.me/blog/2014/03/18/daemonjin-cheng/"/>
     <updated>2014-03-18T15:02:58+08:00</updated>
-    <id>http://beijingsn.github.io/blog/2014/03/18/daemonjin-cheng</id>
+    <id>http://whatshit.me/blog/2014/03/18/daemonjin-cheng</id>
     <content type="html"><![CDATA[<p> (本文转载: <a href="http://blog.chinaunix.net/uid-27105712-id-3356916.html">http://blog.chinaunix.net/uid-27105712-id-3356916.html</a>)</p>
 
 <p>  daemon进程是后台守护进程，有时候也叫精灵进程(agent).linux 下server都是daemon进程。相信大部分开发人员都知道如何去写一个daemon进程。但是另一方面，大部分人不知道为什么要这么做，不少人是从某个地方copy一个函数，拿来主义。但是具体为什么这么实现，却不是很透彻。
