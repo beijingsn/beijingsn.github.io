@@ -4,7 +4,7 @@
   <title><![CDATA[Category: interview | CallMe枪哥]]></title>
   <link href="http://whatshit.me/blog/categories/interview/atom.xml" rel="self"/>
   <link href="http://whatshit.me/"/>
-  <updated>2014-08-07T18:46:50+08:00</updated>
+  <updated>2014-08-07T18:51:38+08:00</updated>
   <id>http://whatshit.me/</id>
   <author>
     <name><![CDATA[Suning]]></name>
@@ -18,29 +18,30 @@
     <link href="http://whatshit.me/blog/2014/03/20/convertstring/"/>
     <updated>2014-03-20T23:48:30+08:00</updated>
     <id>http://whatshit.me/blog/2014/03/20/convertstring</id>
-    <content type="html"><![CDATA[<p>{% highlight c %}</p>
+    <content type="html"><![CDATA[<p><div class="highlight"><pre><code class="c"><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 
-<pre><code>char * p = "abcdefghi";
+<span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="kt">char</span> <span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="s">&quot;abcdefghi&quot;</span><span class="p">;</span>
 
-unsigned long len = (unsigned long)strlen((const char*)p);
-unsigned long myl = len / 2;
+<span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">len</span> <span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)</span><span class="n">strlen</span><span class="p">((</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">p</span><span class="p">);</span>
+<span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">myl</span> <span class="o">=</span> <span class="n">len</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
 
-char * k = (char *)malloc(len);
-k = strdup((const char*)p);
+<span class="kt">char</span> <span class="o">*</span> <span class="n">k</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">len</span><span class="p">);</span>
+<span class="n">k</span> <span class="o">=</span> <span class="n">strdup</span><span class="p">((</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">p</span><span class="p">);</span>
 
-for (int i = 0; i &lt; myl; i++) {
-    char c = p[i];
-    memcpy(k+i,(p+len-i-1),1);
-    memcpy((k+len-i-1),&amp;c,1);
-}
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">myl</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="n">memcpy</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="n">i</span><span class="p">,(</span><span class="n">p</span><span class="o">+</span><span class="n">len</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">memcpy</span><span class="p">((</span><span class="n">k</span><span class="o">+</span><span class="n">len</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">c</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
 
-p = k;
-free(k);
-k = NULL;
-printf("%s\n",p);
-</code></pre>
+<span class="n">p</span> <span class="o">=</span> <span class="n">k</span><span class="p">;</span>
+<span class="n">free</span><span class="p">(</span><span class="n">k</span><span class="p">);</span>
+<span class="n">k</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">p</span><span class="p">);</span>
+<span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
 
-<p>{% endhighlight %}</p>
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+</code></pre></div></p>
 ]]></content>
   </entry>
   
