@@ -1,102 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>CallMe枪哥</title>
-  <meta name="author" content="Suning">
-
-  
-  <meta name="description" content="一般的电脑行情分析软件的主图坐标都提供多种坐标类型方便我们选择。如：普通坐标、对数坐标、等差坐标、百分比坐标、黄金分割坐标、10%等比坐标、等分坐标。 普通坐标：坐标刻度之间的间隔距离与价格成正比。 对数坐标：坐标刻度之间的间隔距离与价格的对数成正比， &hellip;">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://beijingsn.github.io/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="CallMe枪哥" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-  
-
-</head>
-
-<body   >
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="https://www.google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:beijingsn.github.io" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-    <li><a href="/">
-        <span class="blue_light">
-            CallMe枪哥
-        </span>
-       
-           <span class="blue_dark">
-             A blogging framework for hackers.
-           </span>
-       
-    </a></li>
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/about">About me</a></li>
-</ul>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
+  <title><![CDATA[CallMe枪哥]]></title>
+  <link href="http://beijingsn.github.io/atom.xml" rel="self"/>
+  <link href="http://beijingsn.github.io/"/>
+  <updated>2014-08-07T17:26:17+08:00</updated>
+  <id>http://beijingsn.github.io/</id>
+  <author>
+    <name><![CDATA[Suning]]></name>
     
-      <h1 class="entry-title"><a href="/blog/2014/08/07/guan-yu-gu-piao-ruan-jian-de-zuo-biao-shi-yong/">关于股票软件的坐标使用</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
   
-
-
-<time datetime="2014-08-07T17:20:58+08:00" pubdate data-updated="true">Aug 7<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><pre><code>一般的电脑行情分析软件的主图坐标都提供多种坐标类型方便我们选择。如：普通坐标、对数坐标、等差坐标、百分比坐标、黄金分割坐标、10%等比坐标、等分坐标。
+  <entry>
+    <title type="html"><![CDATA[关于股票软件的坐标使用]]></title>
+    <link href="http://beijingsn.github.io/blog/2014/08/07/guan-yu-gu-piao-ruan-jian-de-zuo-biao-shi-yong/"/>
+    <updated>2014-08-07T17:20:58+08:00</updated>
+    <id>http://beijingsn.github.io/blog/2014/08/07/guan-yu-gu-piao-ruan-jian-de-zuo-biao-shi-yong</id>
+    <content type="html"><![CDATA[<pre><code>一般的电脑行情分析软件的主图坐标都提供多种坐标类型方便我们选择。如：普通坐标、对数坐标、等差坐标、百分比坐标、黄金分割坐标、10%等比坐标、等分坐标。
 
 普通坐标：坐标刻度之间的间隔距离与价格成正比。
 
@@ -136,42 +58,15 @@
 2、画黄金分割线
 做水平黄金分割线一定要用普通坐标，如果用对数坐标的话，做出的是对数坐标的黄金分割，而不是价格的黄金分割。
 </code></pre>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/03/20/convertstring/">Convertstring</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-03-20T23:48:30+08:00" pubdate data-updated="true">Mar 20<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content">
+  <entry>
+    <title type="html"><![CDATA[convertstring]]></title>
+    <link href="http://beijingsn.github.io/blog/2014/03/20/convertstring/"/>
+    <updated>2014-03-20T23:48:30+08:00</updated>
+    <id>http://beijingsn.github.io/blog/2014/03/20/convertstring</id>
+    <content type="html"><![CDATA[
 
 <div class="highlight"><pre><code class="c">    <span class="kt">char</span> <span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="s">&quot;abcdefghi&quot;</span><span class="p">;</span>
         
@@ -195,42 +90,15 @@
 
 
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/03/18/daemonjin-cheng/">Daemon进程</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-03-18T15:02:58+08:00" pubdate data-updated="true">Mar 18<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p> (本文转载: <a href="http://blog.chinaunix.net/uid-27105712-id-3356916.html">http://blog.chinaunix.net/uid-27105712-id-3356916.html</a>)</p>
+  <entry>
+    <title type="html"><![CDATA[Daemon进程]]></title>
+    <link href="http://beijingsn.github.io/blog/2014/03/18/daemonjin-cheng/"/>
+    <updated>2014-03-18T15:02:58+08:00</updated>
+    <id>http://beijingsn.github.io/blog/2014/03/18/daemonjin-cheng</id>
+    <content type="html"><![CDATA[<p> (本文转载: <a href="http://blog.chinaunix.net/uid-27105712-id-3356916.html">http://blog.chinaunix.net/uid-27105712-id-3356916.html</a>)</p>
 
 <p>  daemon进程是后台守护进程，有时候也叫精灵进程(agent).linux 下server都是daemon进程。相信大部分开发人员都知道如何去写一个daemon进程。但是另一方面，大部分人不知道为什么要这么做，不少人是从某个地方copy一个函数，拿来主义。但是具体为什么这么实现，却不是很透彻。
   见过一些面试官或被面试人。很多人解释daemon进程存在的理由是因为僵死进程。或者输入输出。其实和这些东西一毛钱关系都没有。daemon函数存在的原因是因为控制终端由于某些原因（如断开终端链接）会发送一些信号的原因。而接收进城处理这些信号缺省动作会让进程退出。这些信号会由于终端上敲一些特殊按键而产生。</p>
@@ -308,42 +176,15 @@
 
 
 <p>上面这些信号，应该有些程序缺省处理（SIG_DFL）本身动作就是忽略（SIG_IGN），不是退出进程。不过按照上面写也不会造成什么问题。</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/03/11/lei-bian-liang/">类变量</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-03-11T23:58:17+08:00" pubdate data-updated="true">Mar 11<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>objc中不能在类声明中的声明static 变量, 会报:
+  <entry>
+    <title type="html"><![CDATA[类变量]]></title>
+    <link href="http://beijingsn.github.io/blog/2014/03/11/lei-bian-liang/"/>
+    <updated>2014-03-11T23:58:17+08:00</updated>
+    <id>http://beijingsn.github.io/blog/2014/03/11/lei-bian-liang</id>
+    <content type="html"><![CDATA[<p>objc中不能在类声明中的声明static 变量, 会报:
 Error: Type name does not allow storage class to be specified
 这是objc不准许的。如果要做类变量，需要在m文件中声明static 变量, 位置在
 @implementation里外都可以。</p>
@@ -359,42 +200,15 @@ Error: Type name does not allow storage class to be specified
 
 <p>不在h文件中声明(@interface之外)的原因和c一样(objc也是c嘛), 任何包含此
 头文件的m文件都会创建一份static变量，同名且互相独立，作用域不相同。</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/03/11/xiao-xi-diao-yong-ce-shi/">Objc消息调用性能测试</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-03-11T20:03:37+08:00" pubdate data-updated="true">Mar 11<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>测试了一下objc的消息调用性能，测试环境是2.3Gi7 16GDDR3</p>
+  <entry>
+    <title type="html"><![CDATA[Objc消息调用性能测试]]></title>
+    <link href="http://beijingsn.github.io/blog/2014/03/11/xiao-xi-diao-yong-ce-shi/"/>
+    <updated>2014-03-11T20:03:37+08:00</updated>
+    <id>http://beijingsn.github.io/blog/2014/03/11/xiao-xi-diao-yong-ce-shi</id>
+    <content type="html"><![CDATA[<p>测试了一下objc的消息调用性能，测试环境是2.3Gi7 16GDDR3</p>
 
 <p>代码如下:</p>
 
@@ -435,102 +249,7 @@ Error: Type name does not allow storage class to be specified
 
 <p>100万次的空消息调用，直接的函数调用比通过消息方式节约了大约33-42%
 如果有密集型的循环调用，这里是可以优化一部分性能，但带来的负面是代码不易读。</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>Categories</h1>
-  <ul id="categories">
-	<li class='category'><a href='/blog/categories/linux/'>Linux (1)</a></li>
-<li class='category'><a href='/blog/categories/stock/'>Stock (1)</a></li>
-<li class='category'><a href='/blog/categories/interview/'>interview (1)</a></li>
-<li class='category'><a href='/blog/categories/objectc/'>objectc (2)</a></li>
-
-  </ul>
-</section>
-<section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2014/08/07/guan-yu-gu-piao-ruan-jian-de-zuo-biao-shi-yong/">关于股票软件的坐标使用</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/03/20/convertstring/">convertstring</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/03/18/daemonjin-cheng/">Daemon进程</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/03/11/lei-bian-liang/">类变量</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/03/11/xiao-xi-diao-yong-ce-shi/">Objc消息调用性能测试</a>
-      </li>
-    
-  </ul>
-</section>
-
-
-
-
-
-  
-</aside>
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Suning -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-<script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-49242448-1', 'whatshit.me');
-ga('send', 'pageview');
-</script>
-
-</footer>
-  
-
-
-
-
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-
-
-
-</body>
-</html>
+</feed>
