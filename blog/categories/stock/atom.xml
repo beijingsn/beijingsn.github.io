@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Stock | CallMe枪哥]]></title>
   <link href="http://whatshit.me/blog/categories/stock/atom.xml" rel="self"/>
   <link href="http://whatshit.me/"/>
-  <updated>2014-08-08T15:48:28+08:00</updated>
+  <updated>2014-08-08T17:00:51+08:00</updated>
   <id>http://whatshit.me/</id>
   <author>
     <name><![CDATA[Suning]]></name>
@@ -92,6 +92,17 @@
 
 <p>简单来说除权和除息对股价的影响就是:<br/>
 <img src="/images/blogs/201408XRXD.jpg" alt="XRXD" /></p>
+
+<p>复权: 所谓复权就是对股价和成交量进行权息修复，按照股票的实际涨跌绘制股价走势图,并把成交量调整为相同的股本口径。
+分为向前复权和向后复权。</p>
+
+<p>向前复权: 就是保持现有价位不变，将以前的价格缩减，将除权前的K线向下平移，使图形吻合，保持股价走势的连续性。</p>
+
+<p>向后复权: 就是保持先前的价格不变，而将以后的价格增加。</p>
+
+<p>两者最明显的区别在于向前复权的当前周期报价和K线显示价格完全一致，而向后复权的报价大多高于K线显示价格。</p>
+
+<p><img src="/images/blogs/201408fuquan.gif" alt="fuquan" /></p>
 ]]></content>
   </entry>
   
