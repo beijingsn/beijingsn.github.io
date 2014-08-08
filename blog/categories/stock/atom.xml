@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Stock | CallMe枪哥]]></title>
   <link href="http://whatshit.me/blog/categories/stock/atom.xml" rel="self"/>
   <link href="http://whatshit.me/"/>
-  <updated>2014-08-08T17:00:51+08:00</updated>
+  <updated>2014-08-08T18:44:12+08:00</updated>
   <id>http://whatshit.me/</id>
   <author>
     <name><![CDATA[Suning]]></name>
@@ -14,13 +14,40 @@
 
   
   <entry>
+    <title type="html"><![CDATA[除权除息股价为什么会下跌]]></title>
+    <link href="http://whatshit.me/blog/2014/08/08/chu-quan-chu-xi/"/>
+    <updated>2014-08-08T17:20:58+08:00</updated>
+    <id>http://whatshit.me/blog/2014/08/08/chu-quan-chu-xi</id>
+    <content type="html"><![CDATA[<p>除权: 市公司以股票股利分配给股东，也就是公司的盈余转为增资时，或进行配股时，就要对股价进行除权（XR），XR是EXCLUDE（除去）RIGHT（权利）的简写。</p>
+
+<p>除息: 上市公司将盈余以现金分配给股东，股价就要除息（XD），XD是EXCLUDE（除去）DIVIDEN（利息）的简写。</p>
+
+<p>除权除息日购入该公司股票的股东则不可以享有本次分红派息或配股。</p>
+
+<p>简单来说除权和除息对股价的影响就是:<br/>
+<img src="http://whatshit.me/images/blogs/201408XRXD.jpg" width="360" height="282" /></p>
+
+<p>复权: 所谓复权就是对股价和成交量进行权息修复，按照股票的实际涨跌绘制股价走势图,并把成交量调整为相同的股本口径。
+分为向前复权和向后复权。</p>
+
+<p>向前复权: 就是保持现有价位不变，将以前的价格缩减，将除权前的K线向下平移，使图形吻合，保持股价走势的连续性。</p>
+
+<p>向后复权: 就是保持先前的价格不变，而将以后的价格增加。</p>
+
+<p>两者最明显的区别在于向前复权的当前周期报价和K线显示价格完全一致，而向后复权的报价大多高于K线显示价格。</p>
+
+<p><img src="http://whatshit.me/images/blogs/201408fuquan.jpg" width="360" height="480" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[关于股票软件的坐标使用]]></title>
     <link href="http://whatshit.me/blog/2014/08/07/guan-yu-gu-piao-ruan-jian-de-zuo-biao-shi-yong/"/>
     <updated>2014-08-07T17:20:58+08:00</updated>
     <id>http://whatshit.me/blog/2014/08/07/guan-yu-gu-piao-ruan-jian-de-zuo-biao-shi-yong</id>
     <content type="html"><![CDATA[<p>一般的电脑行情分析软件的主图坐标都提供多种坐标类型方便我们选择。如：普通坐标、对数坐标、等差坐标、百分比坐标、黄金分割坐标、10%等比坐标、等分坐标。</p>
 
-<p><img src="/images/blogs/201408coordinate.jpg" alt="坐标系" /></p>
+<p><img src="http://whatshit.me/images/blogs/201408coordinate.jpg" width="460" height="348" /></p>
 
 <p><font color="red">普通坐标</font>：坐标刻度之间的间隔距离与价格成正比。</p>
 
@@ -76,33 +103,6 @@
 
 <p>做水平黄金分割线一定要用普通坐标，如果用对数坐标的话，做出的是对数坐标的黄金分割，而不是价格的黄金分割。
 </font></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[除权除息股价为什么会下跌]]></title>
-    <link href="http://whatshit.me/blog/2014/08/07/chu-quan-chu-xi/"/>
-    <updated>2014-08-07T17:20:58+08:00</updated>
-    <id>http://whatshit.me/blog/2014/08/07/chu-quan-chu-xi</id>
-    <content type="html"><![CDATA[<p>除权: 市公司以股票股利分配给股东，也就是公司的盈余转为增资时，或进行配股时，就要对股价进行除权（XR），XR是EXCLUDE（除去）RIGHT（权利）的简写。</p>
-
-<p>除息: 上市公司将盈余以现金分配给股东，股价就要除息（XD），XD是EXCLUDE（除去）DIVIDEN（利息）的简写。</p>
-
-<p>除权除息日购入该公司股票的股东则不可以享有本次分红派息或配股。</p>
-
-<p>简单来说除权和除息对股价的影响就是:<br/>
-<img src="/images/blogs/201408XRXD.jpg" alt="XRXD" /></p>
-
-<p>复权: 所谓复权就是对股价和成交量进行权息修复，按照股票的实际涨跌绘制股价走势图,并把成交量调整为相同的股本口径。
-分为向前复权和向后复权。</p>
-
-<p>向前复权: 就是保持现有价位不变，将以前的价格缩减，将除权前的K线向下平移，使图形吻合，保持股价走势的连续性。</p>
-
-<p>向后复权: 就是保持先前的价格不变，而将以后的价格增加。</p>
-
-<p>两者最明显的区别在于向前复权的当前周期报价和K线显示价格完全一致，而向后复权的报价大多高于K线显示价格。</p>
-
-<p><img src="/images/blogs/201408fuquan.gif" alt="fuquan" /></p>
 ]]></content>
   </entry>
   
