@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Stock | CallMe枪哥]]></title>
   <link href="http://whatshit.me/blog/categories/stock/atom.xml" rel="self"/>
   <link href="http://whatshit.me/"/>
-  <updated>2014-08-08T10:16:59+08:00</updated>
+  <updated>2014-08-08T10:22:27+08:00</updated>
   <id>http://whatshit.me/</id>
   <author>
     <name><![CDATA[Suning]]></name>
@@ -19,6 +19,8 @@
     <updated>2014-08-07T17:20:58+08:00</updated>
     <id>http://whatshit.me/blog/2014/08/07/guan-yu-gu-piao-ruan-jian-de-zuo-biao-shi-yong</id>
     <content type="html"><![CDATA[<p>一般的电脑行情分析软件的主图坐标都提供多种坐标类型方便我们选择。如：普通坐标、对数坐标、等差坐标、百分比坐标、黄金分割坐标、10%等比坐标、等分坐标。</p>
+
+<p><img src="/images/blogs/201408coordinate.png" alt="坐标系" /></p>
 
 <p><font color="red">普通坐标</font>：坐标刻度之间的间隔距离与价格成正比。</p>
 
