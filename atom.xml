@@ -4,7 +4,7 @@
   <title><![CDATA[CallMe枪哥]]></title>
   <link href="http://whatshit.me/atom.xml" rel="self"/>
   <link href="http://whatshit.me/"/>
-  <updated>2014-08-12T23:14:39+08:00</updated>
+  <updated>2014-08-14T23:49:46+08:00</updated>
   <id>http://whatshit.me/</id>
   <author>
     <name><![CDATA[Suning]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[持仓量]]></title>
+    <link href="http://whatshit.me/blog/2014/08/14/chi-cang-liang/"/>
+    <updated>2014-08-14T23:48:10+08:00</updated>
+    <id>http://whatshit.me/blog/2014/08/14/chi-cang-liang</id>
+    <content type="html"><![CDATA[<p>持仓量是期货里面的概念，股市里面是没有这样的持仓量的。<br/>
+股市里面有总股本和流通股本的概念，一家上市公司所有股东持有股票的总和等于公司的总股本；所有流通股东持有股票的总和等于公司的流通股本。</p>
+
+<p>期货的交易是开放式的，持仓量是不固定的，只要有交易对手，理论上可以一直放大；<br/>
+股票的持有量是有限制的，一家公司的所有流通股东持有股票的总和等于公司的流通股本，不会多也不会少。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[亏损与翻本的比例]]></title>
